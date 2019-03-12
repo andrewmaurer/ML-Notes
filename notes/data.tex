@@ -1,0 +1,27 @@
+\section{Data and Inference}
+\label{sec:data}
+
+\subsection{Data}
+
+Generally speaking, data may be in one of two forms: numerical or categorical. Numerical data consist of scalars $x$ or vectors $\vec{x} \in \RR^p$. Categorical take on a discrete set of values in some set $S$.
+
+The following are examples of numerical data:
+\begin{enumerate}
+\item 
+\end{enumerate}
+
+While these are examples of categorical data:
+\begin{enumerate}
+\item 
+\end{enumerate}
+
+There are ways to apply numerical techniques to categorical data. One such method is called \emph{one-hot encoding}. In this case, the elements of the discrete set $S$ are enumerated $s_1,\ldots,s_r$, and an observation of the event $s_j$ is encoded by the unit vector $e_j \in \RR^r$. This is a hugely inefficient process, and it is often adventageous to reduce the dimension of this numerical embedding of categorical data. Such techniques are covered in Section [??].
+
+\subsection{Supervised Models}
+
+The data presented in a \emph{supervised learning problem} will consist of data vectors $\vec{x}$ The goal when modeling is to choose a smoothly parametrized set of functions $F$, whose input resembles your data and whose output corresponds with the associated observations.
+
+%%% Local Variables:
+%%% TeX-master: "notes"
+%%% LaTeX-command: "latex -shell-escape"
+%%% End:

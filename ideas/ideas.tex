@@ -1,0 +1,44 @@
+\documentclass[12pt,draft,reqno]{amsart}
+
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{enumerate}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{macros}
+\usepackage{minted}
+%\usepackage{hyperref}
+
+\renewcommand{\baselinestretch}{1.3}
+\setcounter{tocdepth}{1}
+
+\begin{document}
+
+\title{Machine Learning Ideas}
+\author{Andrew Maurer}
+\email{andrew.b.maurer@gmail.com}
+\urladdr{andrewmaurer.github.io}
+\date{\today}
+
+\maketitle
+
+
+\begin{abstract}
+  This document is just a bunch of my ideas which lie outside the scope of \texttt{notes.pdf} but still may be worth writing down.
+\end{abstract}
+
+\begin{center}
+  \parbox{4.7in}{
+    \tableofcontents
+    }
+\end{center}
+
+
+\input{choice_in_forests.tex}
+\input{bipartide_expanders.tex}
+\appendix
+
+\vfill
+\end{document}
+
+%%% Local Variables:
+%%% LaTeX-command: "latex -shell-escape"
+%%% End:

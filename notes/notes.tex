@@ -1,21 +1,50 @@
-\documentclass{amsart}
+\documentclass[12pt,draft,reqno]{amsart}
 
 \usepackage{amsthm,amsmath,amssymb}
 \usepackage{enumerate}
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{macros}
+\usepackage{minted}
+%\usepackage{hyperref}
+
+\renewcommand{\baselinestretch}{1.3}
+\setcounter{tocdepth}{1}
 
 \begin{document}
 
 \title{Machine Learning Notes}
-\author{Andrew Maurer}
+\author{Andrew B Maurer}
+\email{andrew.b.maurer@gmail.com}
+\urladdr{andrewmaurer.github.io}
 \date{\today}
+
+\begin{abstract}
+  The goal of this document is to present my own own understanding of machine learning models from a somewhat theoretical standpoint. I want to describe the models rigorously and mathematically, as well as point out some key difference between models which seem similar. For a more applied view, I will have a Github repo dedicated to Python examples of these algorithms, which may be my own implementation in \texttt{numpy} or simply using pre-existing libraries (e.g., \texttt{sklearn} or \texttt{pytorch}) on publicly available data-sets to get a feel for the techniques. At some point I may take one or more of these sections and make it into its own document, or make this document into a book. That's a problem for another day. :)
+\end{abstract}
 
 \maketitle
 
-\begin{abstract}
-  test
-\end{abstract}
+\begin{center}
+  \parbox{4.7in}{
+    \tableofcontents
+    }
+\end{center}
 
+
+\input{data.tex}
+\input{optimization.tex}
+\input{linear_regression.tex}
+\input{logit.tex}
 \input{svm.tex}
+\input{random_forests.tex}
+\input{pca.tex}
+
+\appendix
+
+\input{linear_algebra.tex}
 
 \end{document}
+
+%%% Local Variables:
+%%% LaTeX-command: "latex -shell-escape"
+%%% End:

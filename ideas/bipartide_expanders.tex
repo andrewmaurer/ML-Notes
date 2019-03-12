@@ -1,0 +1,22 @@
+\section{Sparse Bipartide Expander Graphs}
+\label{sec:bipartide-expanders}
+
+This is something I chatted about with Daniel McKenzie at University of Georgia.
+
+\subsection{Overview}
+\label{sec:overview}
+
+When training a neural network, the dropout technique demonstrates that not every connection is valuable. Expander graphs remain extremely well-connected while containing far fewer edges than their fully connected counterparts. Of interest to us is the bipartide expander case, as an alternative to fully connected layers in neural networks. Neural network layers with $m$ input variables (including bias) and $n$ output variables will have $m \cdot n$ edges. Replacing this number of connections with something $o(m \cdot n)$ would yield much faster training while perhaps maintaining performance.
+
+In implementation, I would build a \texttt{SBELayer} with $n$ input neurons and $m$ output neurons by randomly selecting $\lfloor \sqrt{n} \rfloor$ input neurons $\mathtt{in}(1), \ldots , \mathtt{in}(\lfloor \sqrt{n} \rfloor)$ for each output neuron $\mathtt{out}$.
+\begin{equation}
+  \label{eq:SBE-layer}
+  \mathtt{out} = \sum_{i = 1}^{\lfloor \sqrt{n} \rfloor} w_i \cdot \mathtt{in}(i)
+\end{equation}
+The alternative would be selecting $\lfloor\sqrt{m}\rfloor$ output neurons for each input neuron. This will ensure all inputs are equally represented in the output layer, but I believe it is more important to make sure each output neuron has an equal amount of information.
+
+
+%%% Local Variables:
+%%% TeX-master: "ideas"
+%%% LaTeX-command: "latex -shell-escape"
+%%% End:

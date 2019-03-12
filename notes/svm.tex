@@ -1,0 +1,27 @@
+\section{Support Vector Machines}
+\label{sec:svm}
+
+\subsection{Basic Definitions} When a binary classification dataset $D \subseteq \RR^d$ is \emph{linearly separable}, it becomes advantageous to choose not just \emph{a} separating hyperplane, but rather a separating hyperplane which maintains maximal distance from the data set.
+
+\begin{definition}
+  A \emph{hyperplane} in $\RR^d$ is the zero-set of a linear equation. With $w \in \RR^d$, $c \in \RR$:
+  \begin{equation}
+    \label{eq:hyperplane}
+    H(w,c) = \left\{ x \in \RR^d \mid w \cdot x = c \right\}
+  \end{equation}
+  A dataset $D = D^+ \sqcup D^-$ is \emph{linearly separable} if there exists a hyperplane $H(w,c)$ such that
+  \begin{equation}
+    \label{eq:lin-sep}
+    D^+ = \{x \in D \mid w \cdot x > c\} \text{ and } D^- = \{x \in D \mid w \cdot x < c\}.
+  \end{equation}
+  The hyperplane $H$ is called a \emph{separating hyperplane}.
+\end{definition}
+
+\begin{definition}
+  A \emph{support vector machine} is a machine learning algorithm used on linearly separable data to find a separating hyperplane $H(w,c)$ which \emph{maximizes} the distance between points in the data-set and the plane $H(w,c)$.
+\end{definition}
+
+%%% Local Variables:
+%%% TeX-master: "notes"
+%%% LaTeX-command: "latex -shell-escape"
+%%% End:

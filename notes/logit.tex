@@ -1,0 +1,16 @@
+\section{Logistic Regression}
+\label{sec:logit}
+
+\subsection{Overview}
+\label{sec:logit-overview}
+
+Logistic regression is a machine learning technique that can be used for both classification or regression. At its heart, logistic regression is the composition of an affine transformation $A: \RR^n \to \RR$ with the sigmoid function $\sigma(x) = 1/(1+ \exp(-x))$. In general, this sort of function may be written as 
+\begin{equation}
+    f(x) = \frac{1}{1 + \exp(-w^T\cdot x + b)}.
+\end{equation}
+Typically, if $f(x) \geq 0.5$, we predict $\hat y = 1$, and if $f(x) < 0.5$, we predict $\hat y = 0$. The \emph{decision boundary} is thus $\{f(x) = 0.5\} = \{w^T \cdot x = b \}$. This is a hyperplane $H(w,b) \subseteq \RR^n$. Points close to the decision boundary are more ambiguous, and points with higher orthogonal distance to the decision boundary yields a more extreme estimate.
+
+%%% Local Variables:
+%%% TeX-master: "notes"
+%%% LaTeX-command: "latex -shell-escape"
+%%% End:

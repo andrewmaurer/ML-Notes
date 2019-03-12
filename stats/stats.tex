@@ -1,0 +1,46 @@
+\documentclass[12pt,draft,reqno]{amsart}
+
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{enumerate}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{macros}
+\usepackage{minted}
+\usepackage{todonotes}
+%\usepackage{hyperref}
+
+\renewcommand{\baselinestretch}{1.3}
+\setcounter{tocdepth}{1}
+
+\begin{document}
+
+\title{Statistics Concepts}
+\author{Andrew Maurer}
+\email{andrew.b.maurer@gmail.com}
+\urladdr{andrewmaurer.github.io}
+\date{\today}
+
+\begin{abstract}
+  These are just some statistical concepts that have come up several times in what I've been doing, and I figured it would be useful to have them written up for my own benefit. I might turn some of these into blog posts.
+\end{abstract}
+
+\maketitle
+
+\begin{center}
+  \parbox{4.7in}{
+    \tableofcontents
+    }
+\end{center}
+
+
+\input{R2.tex}
+\input{ROC.tex}
+\input{p-values.tex}
+
+\appendix
+
+\vfill
+\end{document}
+
+%%% Local Variables:
+%%% LaTeX-command: "latex -shell-escape"
+%%% End:

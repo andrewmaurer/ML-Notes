@@ -1,0 +1,35 @@
+\section{Receiver Operating Characteristic (ROC)}
+\label{sec:AUC-ROC}
+
+\subsection{Overview}
+
+When performing binary classification, we often times encode binary data as $0$s and $1$s, and perform regression. Therefore, when predicting a value with $\hat y \approx 0.089$, we infer that $y$ is most likely $1$. There is some \emph{threshold} $\alpha \in [0,1]$ for which negative predictions are those with $\hat y < \alpha$ and positive predictions are those with $\hat y \geq \alpha$.
+
+\begin{definition}
+  In binary classification with threshold $\alpha$ as above, we make the following definitions for \emph{true positive}, \emph{false positive}, \emph{true negative}, and \emph{false negative} respectively.
+  \begin{enumerate}[(i)]
+    \item TP: predictions with $\hat y \geq \alpha$ and $y = 1$.
+    \item FP: predictions with $\hat y \geq \alpha$ and $y = 0$.
+    \item TN: predictions with $\hat y < \alpha$ and $y = 0$,
+    \item FN: predictions with $\hat y < \alpha$ and $y = 1$.
+  \end{enumerate}
+  These can be arranged into a table.
+  \begin{figure}[H]
+    \missingfigure{Table of TP, FN, etc}
+  \end{figure}
+\end{definition}
+
+
+With true positives et cetera defined, we may talk about the \emph{true positive rate} and the \emph{true negative rate}, defined as follows:
+\begin{equation}
+  \TPR = \frac{\TP}{\TP + \FN}
+  \text{ and } 
+  \TNR = \frac{\TN}{\TN + \FP}
+\end{equation}
+
+The idea behind the ROC curve is that as the threshold $\alpha$ changes, the TPR and TNR change. By mapping $\alpha \to (\TPR(\alpha), \TNR(\alpha))$, we parametrize a curve in the unit box $[0,1]^2 \subseteq \RR^2$.
+
+%%% Local Variables:
+%%% TeX-master: "stats"
+%%% LaTeX-command: "latex -shell-escape"
+%%% End:

@@ -1,0 +1,20 @@
+\section{Social Choice in Random Forest Classifiers}
+\label{sec:choice-in-forests}
+
+\subsection{Overview}
+\label{sec:overview}
+
+When using a random forest for classification, a number of trees are trained to predict the response variable and the class with the most trees is declared the winner. At its essence, trees are trained to be voters and plurality voting is applied. My question is: what happens if another voting system is applied? Two rank-choice voting systems of interest are:
+\begin{enumerate}
+\item \emph{Hare Voting:} In which the candidate(s) with the fewest first-place votes are eliminated sequentially.
+\item \emph{Coomb's Rule:} In which the candidate(s) with the most last-place votes are eliminated sequentially.
+\end{enumerate}
+By \emph{Arrow's Impossibility Theorem} and \emph{Gibbard-Satterthwaite Theorem}, there is no perfect voting system. Because of this, I am interested in whether using an alternative voting system that \emph{really} cares about the rankings of voters will yield better results.
+
+The only thing that makes me nervous is that the time taken for prediction will increase by up to a factor of the number of categorical classes to be predicted.
+
+
+%%% Local Variables:
+%%% TeX-master: "ideas"
+%%% LaTeX-command: "latex -shell-escape"
+%%% End:

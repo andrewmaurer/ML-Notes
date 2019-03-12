@@ -1,0 +1,51 @@
+\section{Optimization}
+
+\subsection{Motivation}
+\label{sec:optim-motivation}
+In machine learning we have a data set $D \subset \RR^n$ and a cost function $J = J(D;\Theta)$, which depends on a number of parameters $\Theta = (\theta_1,\ldots,\theta_n)$. As the data set is given, the goal is to find parameter $\Theta^*$ which minimizes cost given the data. Symbolically, optimization is the search for the following parameter:
+\begin{equation}
+  \label{eq:min-cost}
+  \Theta^* = \argmin_{\Theta} J(D;\Theta)
+\end{equation}
+We should note that perhaps $\Theta$ consists of many parameters relative to the data set, meaning the prediction function may overfit the training data. Overtrained models are highly specialized to the training data, and as such may perform poorly on previously unseen data. The problem of finding a model which fits the training data while generalizing to test data is called the \emph{bias-variance tradeoff}, and will be explored in Section [??].
+
+\subsection{Gradient Descent}
+\label{sec:gradient-descent}
+
+We have seen that the goal of machine learning is to optimize the cost function within a certain space of functions, parametrized by $\Theta = (\theta_1,\ldots,\theta_n)$. Let $f(\Theta)$ be the function we wish to minimize. Recall this definition from calculus:
+\begin{definition}
+  The \emph{gradient} of $f(\Theta)$ at a point $\Theta_0$ is the vector
+  \begin{equation}
+    \nabla f (\Theta_0) = \left< \frac{\partial f}{\partial \theta_1}(\Theta_0), \ldots, \frac{\partial f}{\partial \theta_n}(\Theta_0)\right>
+  \end{equation}
+\end{definition}
+It is a basic fact of calculus that in a neighborhood of the point $\Theta_0$, $f(\Theta)$ increases fastest in the direction of the gradient $\nabla f(\Theta_0)$ and decreases fastest in the direction of the negative gradient $-\nabla f(\Theta_0)$.
+
+\begin{definition}
+  \label{def:gradient-descent}
+  \emph{Gradient descent} is an algorithm which minimizes a differentiable function $f(\Theta)$ by taking small steps in the direction of steepest decrease.
+
+  This direction of steepest decrease is identified by using the gradient. Because the gradient may be large in magnitude, we choose a number $\alpha > 0$ and move in the direction of the gradient, with magnitude scaled by $\alpha$.
+\end{definition}
+
+\begin{figure}[H]
+\begin{minted}{}
+gradient_descent(func, dim, gradient, alpha):
+    Theta = random_vector(dim)
+    for 1,2,...,num_iterations:
+        grad = gradient(func, Theta)
+        Theta = Theta - alpha * grad
+    return Theta
+\end{minted}
+\caption{Pseudo-Code for Gradient Descent}
+\end{figure}
+
+\subsection{Adam Optimizer}
+\label{sec:adam-optim}
+
+
+
+%%% Local Variables:
+%%% TeX-master: "notes"
+%%% LaTeX-command: "latex -shell-escape"
+%%% End:

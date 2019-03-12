@@ -1,0 +1,43 @@
+\section{$R^2$ Score}
+\label{sec:bipartide-expanders}
+
+\subsection{Definition and Intuition}
+The idea behind an $R^2$-score (or \emph{coefficient of determination}) is to quantify how your model compares to the most basic model possible.
+
+Suppose you have input data $X$, which can be a mixture of both numerical and categorical, and they are being used to predict a numerical output $Y$. The simplest possible model is the average value $\bar y$, which is the single number which minimizes sum-squared error. Symbolically,
+\begin{equation}
+  \label{eq:mean-sse}
+  \bar y = \argmin_{z} \sum_{y \in Y} (y - z)^2.
+\end{equation}
+This model which identically predicts the mean value of the data-set (which I will call the \emph{trivial model} or $\bar y$) is the simplest possible model, and as a base-line we would like to know how any other model compares to $\bar y$.
+\begin{figure}[h]
+  \centering
+  \missingfigure{Compare mean with another model.}
+  \caption{Two competing models}
+  \label{fig:r2}
+\end{figure}
+
+The $R^2$-score is how we compare a model to the trivial model. First, let us define the \emph{sum squared error} for a model $f$:
+\begin{equation}
+  \label{eq:SSE}
+  \SSE(f) = \sum_{(x,y) \in D} (f(x) - y)^2
+\end{equation}
+To compare a model $f$ to $\bar y$, we investigate the percentage of $\bar y$'s sum squared error which is still present in $f$'s sum squared error, i.e., $\SSE(f) / \SSE(\bar y)$. This will be a non-negative number. The $R^2$-score is then defined to be
+\begin{equation}
+  \label{eq:R2}
+  R^2 = 1 - \frac{\SSE(f)}{\SSE(\bar y)}
+\end{equation}
+and may be interpreted as the proportion of $\bar y$'s error which is explained by $f$. Notice that $R^2 \in (-\infty,1]$.
+\begin{enumerate}
+\item If $R^2 = 1$, then $\SSE(f)= 0$ meaning we have fit the data perfectly. Be careful of overfitting.
+\item If $R^2 = 0$, then $\SSE(f) = \SSE(\bar y)$ and all your work modeling has yielded no payoff.
+\item If $R^2 < 0$, then $SSE(f) > \SSE(\bar y)$ and you need to seriously re-evaluate your life choices.
+\end{enumerate}
+
+\subsection{Adjusted $R^2$ score}
+
+
+%%% Local Variables:
+%%% TeX-master: "stats"
+%%% LaTeX-command: "latex -shell-escape"
+%%% End:
