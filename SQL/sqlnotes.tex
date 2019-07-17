@@ -1,0 +1,68 @@
+\documentclass[12pt,reqno]{amsart}
+
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{enumerate}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{minted}
+%\usepackage{hyperref}
+
+\renewcommand{\baselinestretch}{1.3}
+\setcounter{tocdepth}{1}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{subsection}
+
+\begin{document}
+
+\title{SQL Programming Notes}
+\author{Andrew Maurer}
+\date{\today}
+
+\begin{abstract}
+  This is a bit more limited in scope than the other documents. But I'd like to learn SQL. Resources include the Khan Academy series on SQL.
+\end{abstract}
+
+\maketitle
+
+\begin{center}
+  \parbox{4.7in}{
+    \tableofcontents
+    }
+\end{center}
+
+\section{Basic Ideas}
+\label{sec:sql-idea}
+
+Databases store information in tables. It's inefficient to store all data in a single table. Relational databases like SQL have multiple tables, and make it easy to access data in one table from another table.
+
+\section{Commands}
+\label{sec:commands}
+
+\subsection{Creating Databases}
+\label{sec:create}
+
+\begin{figure}[H]
+  \centering
+  \begin{minted}{sql}
+CREATE TABLE groceries (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER);
+
+INSERT INTO groceries VALUES (1, "Bananas", 4);
+INSERT INTO groceries VALUES (2, "Peanut Butter", 1);
+INSERT INTO groceries VALUES (1, "Chocolate Bars", 2);
+
+SELECT * FROM groceries;
+  \end{minted}
+  \caption{Creating a table}
+  \label{fig:create_table}
+\end{figure}
+
+\section{Aggregate Functions}
+\label{sec:aggregate}
+
+\appendix
+
+\end{document}
+
+%%% Local Variables:
+%%% LaTeX-command: "latex -shell-escape"
+%%% End:

@@ -1,0 +1,44 @@
+\section{Hypothesis Testing}
+\label{sec:hypothesis}
+
+\subsection{} When running an experiment it is important to adhere to the scientific method in which you develop a hypothesis and test that hypothesis using data. Here I'll talk about the mathier side of  
+
+\subsection{Hypotheses and Types of Errors}
+
+
+
+\subsection{} Suppose a i.i.d. random variables $X_i \sim B(p)$ follow a Bernuoilli distribution with parameter $p \in [0,1]$. The central limit theorem says that after some large number of independent trials, the mean of these trials will follow a normal distribution
+\[
+    \bar X = \frac{\sum X_i}{n} \sim N\left(p, \sqrt{\frac{p (1-p)}{n}}\right).
+\]
+
+Now for another set of random variables $Y_i \sim B(p')$ we would like to \emph{test the hypothesis that $p' > p$}. To test this there are several quanitites we must specify:
+\begin{itemize}
+    \item \textbf{Significance level:} The \emph{significance level} is an upper bound on an acceptable probability of a type-1 error. In other words, the significance level is the maximum possible value of 
+    \[\PP(\text{ reject } H_0 \mid H_0 \text{ is true})\]
+    The significance level is often written $\alpha$. The typical acceptable values of $\alpha$ is $0.05$.
+    \item \textbf{Power:} The \emph{power} is a minumum ability to detect type 2 errors. In other words the power is the minimum value of
+    \[
+        \PP(\text{ rejected } H_0 \mid H_0 \text{ is false})
+    \]
+    Closely associated is the probability of a type-2 error
+    \[\beta = 1 - \text{power} = \PP(\text{ failed to reject } H_0 \mid H_0 \text{ is false})\]
+    A typical acceptable value for power is $0.80$ or $\beta = 0.20$
+    \item \textbf{Percent Improvement:} This is the level of improvement we would expect to see in the test.
+    \item \textbf{Assignment proportions:} Some data will receive control and will become $X$ values, some will receive treatment and become $Y$ values. Call the proportion of individuals in the control group $\gamma$.
+\end{itemize}
+These three quantities allow for the computation of a number $n$, the number of samples necessary to detect statistically significant results.
+
+Say $n$ individuals will participate in this study. This means
+\[
+    \bar X \sim N\left(p, \sqrt{\frac{p(1-p)}{\gamma \cdot n}}\right) \text{ while } \bar Y \sim N\left(p', \sqrt{\frac{p'(1-p')}{(1-\gamma) \cdot n}}\right)
+\]
+The significance level determines a cutoff $C$ such that $\alpha = \PP(\bar X > C)$, which may be unraveled into Equation \ref{eq:cutoff}.
+\begin{equation} \label{eq:cutoff}
+    ???
+\end{equation}
+
+%%% Local Variables:
+%%% TeX-master: "stats"
+%%% LaTeX-command: "latex -shell-escape"
+%%% End:
